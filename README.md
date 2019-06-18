@@ -76,49 +76,73 @@ vi.	HistoryAnimalDailyData             >> Daily data
 
 
 
->>>>>>>>>>>>>>>>>>>>>    DELAVAL SOFTWARE   <<<<<<<<<<<<<<<<<<<<<<
+>>>>    DELAVAL SOFTWARE
 tables to be extracted from the back-up files.
 
 
-Delpro v3.7
+>>>>> Delpro v3.7
 
--	BasicAnimal			contains animal information, including user and life numbers
--	AnimalHistoricalData		contains date and time, days in milk, lactation number, (previous) end time
--	SessionMilkYield		contains the information of each milking session, incl. date and time
--	VoluntarySessionMilkYield	contains sensor data of each milking session
--	DailyMilk			contains daily yield, average 7D yield, duration
--	LactationHistorySummary	contains details of each lactation
+-	BasicAnimal			
+      contains animal information, including user and life numbers
+-	AnimalHistoricalData
+      contains date and time, days in milk, lactation number, (previous) end time
+-	SessionMilkYield	c
+      contains the information of each milking session, incl. date and time
+-	VoluntarySessionMilkYield	
+      contains sensor data of each milking session
+-	DailyMilk			
+      contains daily yield, average 7D yield, duration
+-	LactationHistorySummary
+      contains details of each lactation
 
 	No AnimalDaily; daily data in AHD and DailyMilk
 	Lactation number to be extracted from AnimalHistoricalData or from LactationHistorySummary
 
-Delpro v4.5
+>>>>> Delpro v4.5
 
--	BasicAnimal			contains animal information, including user and life numbers
--	AnimalDaily			contains daily yield, lactation, yield 7D average, days in milk
--	SessionMilkYield		contains the information of each milking session, incl. date and time
--	VoluntarySessionMilkYield	contains sensor data of each milking session
--	AnimalLactationHistory		contains animal, lactation numbers, start date of lactation (calving)
--	HistoryAnimal			contains historical animal information
--	HistoryAnimalTreatment	contains treatment data if registered in the AMS software
--	HistoryAnimalDailyData	contains all daily historical data!!
--	HistoryAnimalLactationInfo	contains lactation information
+-	BasicAnimal			
+      contains animal information, including user and life numbers
+-	AnimalDaily			
+      contains daily yield, lactation, yield 7D average, days in milk
+-	SessionMilkYield		
+      contains the information of each milking session, incl. date and time
+-	VoluntarySessionMilkYield	
+      contains sensor data of each milking session
+-	AnimalLactationHistory		
+      contains animal, lactation numbers, start date of lactation (calving)
+-	HistoryAnimal			
+      contains historical animal information
+-	HistoryAnimalTreatment	
+      contains treatment data if registered in the AMS software
+-	HistoryAnimalDailyData	
+      contains all daily historical data!!
+-	HistoryAnimalLactationInfo	
+      contains lactation information
 
 	AnimalDaily contains SOME historical yield data of the farm
 	HistoryAnimalDailyData contains ALL historical daily (yield) data of a farm
 	DailyMilk often does not exist in these back-up files
 
 
-Delpro v5.1/5.2/5.3
+>>>>> Delpro v5.1/5.2/5.3
 
--	BasicAnimal			contains animal information, including user and life numbers
--	AnimalDaily			contains daily yield, lactation, yield 7D average, days in milk
--	SessionMilkYield		contains the information of each milking session, incl. date and time
--	VoluntarySessionMilkYield	contains sensor data of each milking session
--	AnimalLactationHistory		contains animal, lactation numbers, start date of lactation (calving)
--	HistoryAnimal			contains historical animal information
--	HistoryAnimalTreatment	        contains treatment data if registered in the AMS software
--	HistoryAnimalDailyData	        contains all daily historical data!!
--	HistoryAnimalLactationInfo	contains lactation information
+-	BasicAnimal			
+      contains animal information, including user and life numbers
+-	AnimalDaily			
+      contains daily yield, lactation, yield 7D average, days in milk
+-	SessionMilkYield		
+      contains the information of each milking session, incl. date and time
+-	VoluntarySessionMilkYield	
+      contains sensor data of each milking session
+-	AnimalLactationHistory		
+      contains animal, lactation numbers, start date of lactation (calving)
+-	HistoryAnimal			
+      contains historical animal information
+-	HistoryAnimalTreatment	        
+      contains treatment data if registered in the AMS software
+-	HistoryAnimalDailyData	        
+      contains all daily historical data!!
+-	HistoryAnimalLactationInfo	
+      contains lactation information
 
  
