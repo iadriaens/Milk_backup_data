@@ -1,7 +1,7 @@
 # Milk_backup_data
 Matlab scripts to merge and preprocess daily milkings
 
->>>>>>>>>>>>>>>>>>>>>    SQL installation   <<<<<<<<<<<<<<<<<<<<<<
+>>>>>    SQL installation  
 To access the .bak files, you should first download Microsoft SQL Management Studio, e.g. through this link: 
 https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017
 
@@ -20,7 +20,7 @@ c.	Press ‘connect’
 
 Once connected with your local server, you can restore a .bak file as follows: 
 
->>>>>>>>>>>>>>>>>>>>>    Connect to database   <<<<<<<<<<<<<<<<<<<<<<
+>>>>>    Connect to database  
 1)	Open the Object Explorer
 2)	Right click ‘Databases’ > ‘Restore Database…’
 3)	In the tab ‘General’ > click ‘Device’ and then the button with three dots (…)
@@ -28,7 +28,7 @@ Once connected with your local server, you can restore a .bak file as follows:
 5)	In the tab ‘Options’, tick the box ‘Overwrite the existing database (WITH REPLACE)’  (or you can first detach the previous loaded database)
 
 
->>>>>>>>>>>>>>>>>>>>>     LELY .bak files   <<<<<<<<<<<<<<<<<<<<<<
+>>>>>     LELY .bak files 
 Extract tables and save them as flat files from LELY .bak files
 You can first check the tables and the content if you want to, by opening the different contents and selecting ‘Select top 1000 rows’ or ‘Edit top 200 rows’
 1)	Roll out ‘Databases’ in the Object Explorer
@@ -48,7 +48,7 @@ f.	RemLactation     >> Detailed Lactation and calving data
 9)	‘Save and Run Package’ > just click next
 10)	Click ‘Finish’ (after this, you can read how many lines were transferred; which always interesting to keep track of)
 
->>>>>>>>>>>>>>>>>>>>>     DELAVAL.bak files   <<<<<<<<<<<<<<<<<<<<<<
+>>>>>     DELAVAL.bak files
 Extract tables and save them as flat files from  DELAVAL.bak files
 For Delaval files, this is very similar, two main differences: the tables contents vary with software version, and you might need more tables to have the same information.
 •	Idem as above
@@ -59,20 +59,20 @@ For Delaval files, this is very similar, two main differences: the tables conten
 •	Idem as above
 •	In ‘Configure Flat File Destination’, you select the appropriate table, the ones you need from the DELAVAL back-ups are:
 a.	VERSION v3.7
-i.	BasicAnimal                                      >> Animal Identification, birthdates, user and life numbers etc
-ii.	AnimalHistoricalData                      >> Raw activity data
-iii.	SessionMilkYield                              >> Milking data per milking
-iv.	VoluntarySessionMilkYield            >> Details of per milking session (!!! Export in xlsx file & indicate ‘ignore’ upon error !!!)
-v.	DailyMilk                                           >> Daily data
+i.	BasicAnimal                        >> Animal Identification, birthdates, user and life numbers etc --> save as xlsx
+ii.	AnimalHistoricalData               >> 
+iii.	SessionMilkYield                   >> Milking data per milking
+iv.	VoluntarySessionMilkYield          >> Details of per milking session (!!! Export in xlsx file & indicate ‘ignore’ upon error !!!)
+v.	DailyMilk                          >> Daily data
 vi.	AnimalLactationSummary             >> Lactation information
-vii.	HistoryAnimalTreatments             >> Diagnoses if recorded in the software (optional)
+vii.	HistoryAnimalTreatments            >> Diagnoses if recorded in the software (optional)
 b.	VERSIONS v4.x and v5.x
-i.	BasicAnimal                                      >> Animal Identification, birthdates, user and life numbers etc
-ii.	SessionMilkYield                              >> Milking data per milking
-iii.	VoluntarySessionMilkYield            >> Details of per milking session (!!! Export in xlsx file & indicate ‘ignore’ upon error !!!)
-iv.	HistoryAnimalLactationInfo          >> Details of lactations
-v.	HistoryAnimal                                   >> Animal details
-vi.	HistoryAnimalDailyData                 >> Daily data
+i.	BasicAnimal                        >> Animal Identification, birthdates, user and life numbers etc
+ii.	SessionMilkYield                   >> Milking data per milking
+iii.	VoluntarySessionMilkYield          >> Details of per milking session (!!! Export in xlsx file & indicate ‘ignore’ upon error !!!)
+iv.	HistoryAnimalLactationInfo         >> Details of lactations
+v.	HistoryAnimal                      >> Animal details
+vi.	HistoryAnimalDailyData             >> Daily data
 
 
 
@@ -83,8 +83,7 @@ tables to be extracted from the back-up files.
 Delpro v3.7
 
 -	BasicAnimal			contains animal information, including user and life numbers
--	AnimalHistoricalData		contains date and time, days in milk, lactation number, (previous) end 
-				time
+-	AnimalHistoricalData		contains date and time, days in milk, lactation number, (previous) end time
 -	SessionMilkYield		contains the information of each milking session, incl. date and time
 -	VoluntarySessionMilkYield	contains sensor data of each milking session
 -	DailyMilk			contains daily yield, average 7D yield, duration
@@ -118,8 +117,8 @@ Delpro v5.1/5.2/5.3
 -	VoluntarySessionMilkYield	contains sensor data of each milking session
 -	AnimalLactationHistory		contains animal, lactation numbers, start date of lactation (calving)
 -	HistoryAnimal			contains historical animal information
--	HistoryAnimalTreatment	contains treatment data if registered in the AMS software
--	HistoryAnimalDailyData	contains all daily historical data!!
+-	HistoryAnimalTreatment	        contains treatment data if registered in the AMS software
+-	HistoryAnimalDailyData	        contains all daily historical data!!
 -	HistoryAnimalLactationInfo	contains lactation information
 
  
@@ -144,7 +143,7 @@ VoluntarySessionMilkYield (v3.7)
 OID / ExpectedRateLF / ExpectedRateRF / ExpectedRateLR / ExpectedRateRR/ 	CarryoverLF / CarryoverRF / CarryoverLR / CarryoverRR / QuarterLFYield / QuarterRFYield	QuarterLRYield / QuarterRRYield / MilkType / Kickoff / Incomplete / NotMilkedTeats / ConductivityLF / ConductivityRF / ConductivityLR / ConductivityRR / BloodLF / BloodRF / BloodLR / BloodRR / PeakFlowLF/ PeakFlowRF / PeakFlowLR / PeakFlowRR / MeanFlowLF / MeanFlowRF / MeanFlowLR / MeanFlowRR / Occ / Mdi / Performance / SampleTube / SampleTubeRack / SampleTubePosition / CurrentCombinedAmd / YieldExpectedLF / YieldExpectedRF / YieldExpectedLR / YieldExpectedRR / UdderCounter / UdderCounterFlags / TeatCounterLF / TeatCounterLR / TeatCounterRF / TeatCounterRR / TeatCounterFlagsLF / TeatCounterFlagsLR / TeatCounterFlagsRF / TeatCounterFlagsRR / CleaningProgramNumber / DiversionReason / AmsSerialData 
 
 
-Detailed contents v4.5
+>>>>>    Detailed contents v4.5
 
 BasicAnimal (v4.5)
 OID / SystemEntryTimeStamp / Number / OfficialRegNo / AnimalGuid / Name / Type / Sex / Breed / BirthDate / Comment / CommentDate / ExitDate / Modified / PedigreeInfo / CalfSize / CalfHealthStatus / CalfUsage / Group / TransponderID / TransponderType / EarTagLeft / EarTagRight / BirthWeight / IsTwin / BirthEvent / ToBeCulled / LatestHistoryIndex / OptimisticLockField / GCRecord / ObjectType / ManualRationControl / CurrentFeedTable / ConsumptionRate / ActivitySetting / BullID / ExitType / DrinkData / MilkingTestAnimal
@@ -173,7 +172,7 @@ OID / ObjectGuid / BeginTime / BasicAnimal / AnimalDaily / EndTime / MilkingDevi
 VoluntarySessionMilkYield (v4.5)
 OID / ExpectedRateLF / ExpectedRateRF / ExpectedRateLR / ExpectedRateRR/ 	CarryoverLF / CarryoverRF / CarryoverLR / CarryoverRR / QuarterLFYield / QuarterRFYield	/ QuarterLRYield / QuarterRRYield / MilkType / Kickoff / Incomplete / NotMilkedTeats / ConductivityLF / ConductivityRF / ConductivityLR / ConductivityRR / BloodLF / BloodRF / BloodLR / BloodRR / PeakFlowLF / PeakFlowRF / PeakFlowLR / PeakFlowRR / MeanFlowLF / MeanFlowRF / MeanFlowLR / MeanFlowRR / Occ / OccAverage / Mdi / Performance / CurrentCombinedAmd / YieldExpectedLF / YieldExpectedRF / YieldExpectedLR / YieldExpectedRR / UdderCounter / UdderCounterFlags / TeatCounterLF / TeatCounterLR / TeatCounterRF / TeatCounterRR / TeatCounterFlagsLF / TeatCounterFlagsLR / TeatCounterFlagsRF / TeatCounterFlagsRR / CleaningProgramNumber / DiversionReason / AmsSerialData / OccHealthClass / OccEmr / SelectiveTakeoffApplied / SelectiveAttach / SmartPulsationRatio
 
-Detailed contents v5.1
+>>>>>   Detailed contents v5.1
 
 BasicAnimal (v5.1)
 OID / SystemEntryTimeStamp / Number / OfficialRegNo/ AnimalGuid / Name / Type / Sex / Breed / BirthDate / Comment / CommentDate / ExitDate / Modified / PedigreeInfo / CalfSize / CalfHealthStatus / CalfUsage / Group / TransponderID / TransponderType / EarTagLeft / EarTagRight / BirthWeight / IsTwin / BirthEvent / ToBeCulled / LatestHistoryIndex / OptimisticLockField / GCRecord / ObjectType / ManualRationControl / CurrentFeedTable / ConsumptionRate / ActivitySetting / BullID / HairColor / ExitType / MilkConfig / Imported / Exported / DrinkData / MilkingTestAnimal
@@ -199,7 +198,7 @@ SessionNo / TotalYield /  Destination /  User / ExpectedYield / ObjectGuid / Beg
 VoluntarySessionMilkYield (v5.1)
 OID / ExpectedRateLF / ExpectedRateRF / ExpectedRateLR / ExpectedRateRR/ 	CarryoverLF / CarryoverRF / CarryoverLR / CarryoverRR / QuarterLFYield / QuarterRFYield / QuarterLRYield / QuarterRRYield / MilkType / Kickoff / Incomplete / NotMilkedTeats / ConductivityLF / ConductivityRF / ConductivityLR / ConductivityRR / BloodLF / BloodRF / BloodLR / BloodRR / PeakFlowLF/ PeakFlowRF / PeakFlowLR / PeakFlowRR / MeanFlowLF / MeanFlowRF / MeanFlowLR / MeanFlowRR / Occ / Mdi / Performance / CurrentCombinedAmd / YieldExpectedLF / YieldExpectedRF / YieldExpectedLR / YieldExpectedRR / UdderCounter / UdderCounterFlags / TeatCounterLF / TeatCounterLR / TeatCounterRF / TeatCounterRR / TeatCounterFlagsLF / TeatCounterFlagsLR / TeatCounterFlagsRF / TeatCounterFlagsRR / CleaningProgramNumber / DiversionReason / AmsSerialData / EnabledTeats / OccAverage / OccHealthClass / OccEmr / SelectiveTakeoffApplied / SelectiveAttach / SmartPulsationRatio
 
-Detailed contents v5.2
+>>>>>   Detailed contents v5.2
 
 BasicAnimal (v5.2)
 OID / Number / OfficialRegNo/ AnimalGuid / Name / Type / Sex / Breed / BirthDate / Comment / CommentDate / ExitDate / ExitType / Modified / PedigreeInfo / CalfSize / CalfHealthStatus / CalfUsage / Group / TransponderID / TransponderType / EarTagLeft / EarTagRight / BirthWeight / IsTwin / BirthEvent / ToBeCulled / LatestHistoryIndex / OptimisticLockField / GCRecord / ObjectType / ConsumptionRate / DrinkData / ActivitySetting / ManualRationControl / CurrentFeedTable / BullID / MilkingTestAnimal / SystemEntryTimeStamp / HairColor / MilkConfig / Imported / Exported / WeightIncreaseDecreaseStatus
@@ -223,7 +222,7 @@ VoluntarySessionMilkYield (v5.2)
 OID / ExpectedRateLF / ExpectedRateRF / ExpectedRateLR / ExpectedRateRR/ 	CarryoverLF / CarryoverRF / CarryoverLR / CarryoverRR / QuarterLFYield / QuarterRFYield	QuarterLRYield / QuarterRRYield / MilkType / Kickoff / Incomplete / NotMilkedTeats / ConductivityLF / ConductivityRF / ConductivityLR / ConductivityRR / BloodLF / BloodRF / BloodLR / BloodRR / PeakFlowLF/ PeakFlowRF / PeakFlowLR / PeakFlowRR / MeanFlowLF / MeanFlowRF / MeanFlowLR / MeanFlowRR / Occ / OccAverage / Mdi / Performance / CurrentCombinedAmd / YieldExpectedLF / YieldExpectedRF / YieldExpectedLR / YieldExpectedRR / UdderCounter / UdderCounterFlags / TeatCounterLF / TeatCounterLR / TeatCounterRF / TeatCounterRR / TeatCounterFlagsLF / TeatCounterFlagsLR / TeatCounterFlagsRF / TeatCounterFlagsRR / CleaningProgramNumber / DiversionReason / AmsSerialData / OccHealthClass / OccEmr / SelectiveTakeoffApplied / AlternativeAttach / SmartPulsationRatio / EnabledTeats
 
 
-Detailed contents v5.3
+>>>>>    Detailed contents v5.3
 
 BasicAnimal (v5.3)
 OID / Number / OfficialRegNo/ AnimalGuid / Name / Type / Sex / Breed / BirthDate / Comment / CommentDate / ExitDate / ExitType / Modified / PedigreeInfo / CalfSize / CalfHealthStatus / CalfUsage / Group / TransponderID / TransponderType / EarTagLeft / EarTagRight / BirthWeight / IsTwin / BirthEvent / ToBeCulled / LatestHistoryIndex / OptimisticLockField / GCRecord / ObjectType / ConsumptionRate / DrinkData / ActivitySetting / ManualRationControl / CurrentFeedTable / BullID / MilkingTestAnimal / SystemEntryTimeStamp / HairColor / MilkConfig / Imported / Exported / WeightIncreaseDecreaseStatus
@@ -246,7 +245,7 @@ OID / ObjectGuid / BeginTime / BasicAnimal / AnimalDaily / EndTime / MilkingDevi
 VoluntarySessionMilkYield (v5.3)
 OID / ExpectedRateLF / ExpectedRateRF / ExpectedRateLR / ExpectedRateRR/ 	CarryoverLF / CarryoverRF / CarryoverLR / CarryoverRR / QuarterLFYield / QuarterRFYield	QuarterLRYield / QuarterRRYield / MilkType / Kickoff / Incomplete / NotMilkedTeats / ConductivityLF / ConductivityRF / ConductivityLR / ConductivityRR / BloodLF / BloodRF / BloodLR / BloodRR / PeakFlowLF/ PeakFlowRF / PeakFlowLR / PeakFlowRR / MeanFlowLF / MeanFlowRF / MeanFlowLR / MeanFlowRR / Occ / OccAverage / Mdi / Performance / CurrentCombinedAmd / YieldExpectedLF / YieldExpectedRF / YieldExpectedLR / YieldExpectedRR / UdderCounter / UdderCounterFlags / TeatCounterLF / TeatCounterLR / TeatCounterRF / TeatCounterRR / TeatCounterFlagsLF / TeatCounterFlagsLR / TeatCounterFlagsRF / TeatCounterFlagsRR / CleaningProgramNumber / DiversionReason / AmsSerialData / OccHealthClass / OccEmr / SelectiveTakeoffApplied / AlternativeAttach / SmartPulsationRatio / EnabledTeats / TeatsFailedCleaning
  
-Data tables to be constructed
+>>>>>  Data tables to be constructed
 
 1)	‘Per milking’ data table
 -	v3.7	BasicAnimal, AnimalHistoricalData, SessionMilkYield, 
@@ -260,20 +259,20 @@ HistoryAnimalLactationInfo
 DLV_milkdata_v37,   DLV_milkdata_v4x
 OUTPUT = OUT
 •	BA 		= Basic Animal ID
-•	Number 	= Farmer cow number
+•	Number 	        = Farmer cow number
 •	OfficialRegNo 	= Official registration number of the cow (UK…)
 •	Name 		= Farmer cow number
 •	BDate 		= Birth date
 •	Calving 	= Calving date
 •	Lac 		= Lactation number 
 •	BeginTime	= Start time of the milking
-•	EndTime	= End Time of the milking
+•	EndTime	        = End Time of the milking
 •	PEndTime 	= Previous End Time of the milking
 •	DIM 		= Days in milk
 •	SesNo		= Session number of the day
 •	TMY 		= Total daily milk yield
 •	Dest		= Destination
-•	NotMilkedTeats= Coded for the teats not milked
+•	NotMilkedTeats  = Coded for the teats not milked
 •	Incomplete	= Coded for the teats milked incompletely
 •	Kickoff		= Coded for the teats kicked off during the milking
 •	MYXX	(4)	= Milk yield per quarter
@@ -286,39 +285,39 @@ OUTPUT = OUT
 
 
 Variable	Origin_v3.7	Origin_v4.x/5.1	Comments
-OID	BA	BA	
-Number	BA	BA	
+OID		BA	BA	
+Number		BA	BA	
 OfficialRegNo	BA	BA	
-Name	BA	BA	
+Name		BA	BA	
 BirthDate	BA	BA	
-OID	AHD	HALI	
+OID		AHD	HALI	
 DateAndTime	AHD		BeginTime of milking / daily
-BeginTime		SMY	
+BeginTime	SMY	
 BasicAnimal	AHD	SMY	
-DIM	AHD		V4.x and v5.x: to be calculated using ALS/HALI
+DIM		AHD		V4.x and v5.x: to be calculated using ALS/HALI
 LactationNumber	AHD	ALS/HALI	
-StartDate		ALS/HALI	This the LACTATION Start = Calving
-EndTime	AHD	SMY	
+StartDate	ALS/HALI	This the LACTATION Start = Calving
+EndTime		AHD	SMY	
 PreviousEndTime	AHD	SMY	To calculate MI
-OID	SMY	SMY	
+OID		SMY	SMY	
 SessionNo	SMY	SMY	
 TotalYield	SMY	SMY	
 Destination	SMY	SMY	
-OID	VSMY	VSMY	
+OID		VSMY	VSMY	
 QuarterLFYield	VSMY	VSMY	
 QuarterRFYield	VSMY	VSMY	
 QuarterLRYield	VSMY	VSMY	
 QuarterRRYield	VSMY	VSMY	
-Kickoff	VSMY	VSMY	
+Kickoff		VSMY	VSMY	
 Incomplete	VSMY	VSMY	
 ConductivityLF	VSMY	VSMY	
 ConductivityRF	VSMY	VSMY	
 ConductivityLR	VSMY	VSMY	
 ConductivityRR	VSMY	VSMY	
-BloodLF	VSMY	VSMY	
-BloodRF	VSMY	VSMY	
-BloodLR	VSMY	VSMY	
-BloodRR	VSMY	VSMY	
+BloodLF		VSMY	VSMY	
+BloodRF		VSMY	VSMY	
+BloodLR		VSMY	VSMY	
+BloodRR		VSMY	VSMY	
 PeakFlowLF	VSMY	VSMY	
 PeakFlowRF	VSMY	VSMY	
 PeakFlowLR	VSMY	VSMY	
@@ -327,8 +326,8 @@ MeanFlowLF	VSMY	VSMY
 MeanFlowRF	VSMY	VSMY	
 MeanFlowLR	VSMY	VSMY	
 MeanFlowRR	VSMY	VSMY	
-Occ	VSMY	VSMY	
-Mdi	VSMY	VSMY	
+Occ		VSMY	VSMY	
+Mdi		VSMY	VSMY	
 
 
 
@@ -367,24 +366,24 @@ OUTPUT = OUT
 
 
 Variable	Origin_v3.7	Origin_v4.x	Comments
-OID	BA	BA	
-Number	BA	BA	
+OID		BA	BA	
+Number		BA	BA	
 OfficialRegNo	BA	BA	
-Name	BA	BA	
+Name		BA	BA	
 BirthDate	BA	BA	
-OID	ALS	HALI	
-Animal	ALS	HALI	
+OID		ALS	HALI	
+Animal		ALS	HALI	
 LactationNumber	ALS	HALI	
 StartDate	ALS	HALI	This is the calving date
-OID	AHD		
+OID		AHD		
 Animal		HADD	
 LactationNumber	AHD	HADD	
-DIM	AHD	HADD	
-OID	DM	HADD	
+DIM		AHD	HADD	
+OID		DM	HADD	
 DailyYield	DM	HADD	
 Last7DayAvg	DM	HADD	
 Duration	DM		
-MilkingDurationInSec		HADD	
+MilkingDurationInSec	HADD	
 Milkings		HADD	
 Kickoffs		HADD	
 Incompletes		HADD	
